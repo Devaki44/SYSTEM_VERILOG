@@ -11,11 +11,16 @@ module concatenation_operator;
     
     out_string = {"Hi"," ","Devaki"};
     $display("out_string : %p",out_string);
+    
+    out_string = {"Hi"," ","Devaki"};
+    $display("out_string : %s",out_string);
   end
 endmodule
+    
 
 
 # KERNEL: out : 1101x101
 # KERNEL: out_string : "Hi Devaki"
+# KERNEL: out_string : Hi Devaki
 # KERNEL: Simulation has finished. There are no more test vectors to simulate.
 # VSIM: Simulation has finished.
