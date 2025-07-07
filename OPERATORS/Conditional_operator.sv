@@ -27,7 +27,7 @@ endmodule
 
 # KERNEL: out : 1101
 # KERNEL: out : 0
-# KERNEL: out : xx0x    //simulator  error
-# KERNEL: out : xx0x    //simulator error
+# KERNEL: out : xx0x    //simulator  error:Expected output = xxxx
+# KERNEL: out : xx0x    //simulator error:Expected output = xxxx
 # KERNEL: Simulation has finished. There are no more test vectors to simulate.
 # VSIM: Simulation has finished.
