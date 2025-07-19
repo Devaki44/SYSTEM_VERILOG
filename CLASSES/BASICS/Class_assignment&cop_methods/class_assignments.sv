@@ -1,35 +1,48 @@
-class packet;
-  bit [7:0]add;
+class packet;		
+  bit [7:0]addr;
   bit [7:0]data;
+
+  function new();
+    addr = 8'h01;
+    data = 8'h02;
+    $display(" NEW : addr = %0h , data = %0h ",addr,data);
+  endfunction
   
-  function void packet();
-     add = 8'hfa;
-     data =8'hac;
-    
-     $display(" IN : add = %0h , data = %0h ",add,data);
+  function void indata();
+     addr = 8'hfa;
+     data = 8'hac;
+    $display(" CLASS1 : addr = %0h , data = %0h ",addr,data);
+  endfunction
   
+  function void display();
+    $display(" DISPLAY FUNC : addr = %0h , data = %0h ",addr,data);
   endfunction
 endclass
-module test;
- initial begin
-  packet pkt1,pkt2;
-   pkt1 = new() ;		//object for pkt1
-   pkt2 = pkt1;
-   
-  pkt1.packet();
-   
-   pkt2.add = 8'h11;
-   pkt2.data =8'h13;
-    
-  $display(" OUT : add = %0h , data = %0h ",pkt1.add,pkt1.data);
 
- end
+
+module test;
+  packet p1,p2;
+  
+  initial begin
+    p1 = new();
+    p2 = p1;
+    p1.addr = 8'h22;
+    p1.data = 8'h33;
+    p1.display();
+    p1.indata();
+    p1.display();
+    p2.addr = 8'hff;
+    p2.data = 8'haa;
+    p1.display();
+  end
 endmodule
-  
-  
+    
 
 //OUTPUT
-# KERNEL:  IN : add = fa , data = ac 
-# KERNEL:  OUT : add = 11 , data = 13 
+# KERNEL:  NEW : addr = 1 , data = 2 
+# KERNEL:  DISPLAY FUNC : addr = 22 , data = 33 
+# KERNEL:  CLASS1 : addr = fa , data = ac 
+# KERNEL:  DISPLAY FUNC : addr = fa , data = ac 
+# KERNEL:  DISPLAY FUNC : addr = ff , data = aa 
 # KERNEL: Simulation has finished. There are no more test vectors to simulate.
 # VSIM: Simulation has finished.
