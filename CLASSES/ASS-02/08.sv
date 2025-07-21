@@ -1,4 +1,4 @@
-6. Create a class B that extends class A, and adds 2 more variables of different data types.
+8. Create a class B that extends class A, and adds 2 more variables of different data types.
 
 
   //DESIGN CODE
