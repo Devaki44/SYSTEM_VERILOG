@@ -74,4 +74,4 @@ endmodule
 first() -Finds the smallest index in the array (lexicographically for strings, numerically for ints).
 last()  -Finds the largest index.
 next()  -Finds the smallest index greater than current.
-prev()  -Finds the smallest index greater than current.
+prev()  -Finds the largest index smaller than the current one.
