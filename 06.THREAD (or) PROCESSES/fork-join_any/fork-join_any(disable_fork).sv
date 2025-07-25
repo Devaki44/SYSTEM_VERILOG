@@ -5,29 +5,29 @@ module threads;
       $display("----------------------");  //this is consider as one thread or processes
       
       begin
-        $display("$time,process1 started");
+        $display("time=%0t,process1 started",$time);
         #5;
-        $display("$time,process1 finished");
+        $display("time=%0t,process1 finished",$time);
       end
       
       begin
-        $display("$time,process2 started");
+        $display("time=%0t,process2 started",$time);
         #20;
-        $display("$time,process2 finished");
+        $display("time=%0t,process2 finished",$time);
       end
     join_any
     disable fork;
+	
     $display("----------------------");
-    $display("outside block");
+    $display("time=%0t,outside block",$time);
     $display("----------------------");
   end
 endmodule
 
-
 //OUTPUT
 # KERNEL: ----------------------
 # KERNEL: ----------------------
-# KERNEL: outside block
+# KERNEL: time=0,outside block
 # KERNEL: ----------------------
 # KERNEL: Simulation has finished. There are no more test vectors to simulate.
 # VSIM: Simulation has finished.
