@@ -1,0 +1,31 @@
+//CODE
+class packet;
+  rand byte data[10];
+  
+  constraint data_c{foreach(data[i])
+    if(i%2)  			 data[i]   == (i+2)/2;
+    else if(i%2 != 1)     data[i] == (i+2)/2;}
+endclass
+
+module test;
+  packet pkt;
+  initial begin
+    pkt = new();
+    
+    repeat(5)begin
+      pkt.randomize();
+      $display(" data= %0p ",pkt.data);
+    end
+  end
+endmodule
+
+
+
+//OUTPUT
+# run -all
+#  data= 1 1 2 2 3 3 4 4 5 5 
+#  data= 1 1 2 2 3 3 4 4 5 5 
+#  data= 1 1 2 2 3 3 4 4 5 5 
+#  data= 1 1 2 2 3 3 4 4 5 5 
+#  data= 1 1 2 2 3 3 4 4 5 5 
+# exit
