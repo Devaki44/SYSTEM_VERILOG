@@ -1,5 +1,5 @@
 class packet;
-  parameter N = 4;
+  parameter int N = 4;
   logic [N-1:0]a;
   
   function new();
