@@ -21,10 +21,11 @@ endmodule
 
 
 
-# KERNEL: Wildcard-equality
-# KERNEL: a,b:(a=?=b) = 1
-# KERNEL: a,b:(a!?=b) = 0
-# KERNEL: a,b:(a=?=b) = 1   //OUTPUT IS WRONG DUE TO SIMULATOR ERROR
-# KERNEL: a,b:(a!?=b) = 0
-# KERNEL: Simulation has finished. There are no more test vectors to simulate.
-# VSIM: Simulation has finished.
+# run -all
+# Wildcard-equality
+# Wildcard-equality
+# a,b:(a=?=b) = 1
+# a,b:(a!?=b) = 0
+# a,b:(a=?=b) = x
+# a,b:(a!?=b) = x
+# exit
