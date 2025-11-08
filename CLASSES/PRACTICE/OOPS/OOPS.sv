@@ -286,4 +286,33 @@ module test;
     c.sum(5,7);
   end
 endmodule
+
+
+
+virtual class animal;
+  
+  pure virtual function void sound();
     
+endclass
+    
+    class dog extends animal;   
+      virtual function void sound();
+        $display("--------wow----------");
+      endfunction
+    endclass
+    class cat extends dog;
+      virtual function void sound();
+        $display("--------meow----------");
+      endfunction
+    endclass
+    
+module test;
+  cat c;
+  dog d;
+  initial begin
+    c = new();
+    d = new();
+    c.sound();
+    d.sound();
+  end
+endmodule
